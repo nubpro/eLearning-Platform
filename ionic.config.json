@@ -1,0 +1,7 @@
+{
+  "name": "eLearning",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

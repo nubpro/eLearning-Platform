@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>My Modules</ion-title>
+        <ion-buttons slot="primary">
+            <ion-button (click)="presentIntakesSheet()">Intake</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-list>
+                    <ion-list-header>
+                        {{ selectedCourse && selectedCourse.INTAKE_CODE }}
+                    </ion-list-header>
+
+                    <ion-item
+                        *ngFor="let module of modules"
+                        (click)="goToModule(module)"
+                        button
+                    >
+                        <ion-label>{{ module.MODULE_DESCRIPTION }}</ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

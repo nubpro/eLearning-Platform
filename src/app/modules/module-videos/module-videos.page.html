@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/tabs/modules"></ion-back-button>
+        </ion-buttons>
+
+        <ion-buttons slot="primary" *ngIf="user.role === 'lecturer'">
+            <ion-button (click)="addVideo()">
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title size="small">{{ module?.MODULE_DESCRIPTION }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item
+            *ngFor="let video of videos; let i = index"
+            [routerLink]="[video._id]"
+            mode="ios"
+        >
+            <ion-note slot="start" mode="ios">{{ i + 1 }}</ion-note>
+            <ion-label>
+                <h3>{{ video.title }}</h3>
+                <p>{{ video.uploaded | date: 'd MMM y' }}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+    <div class="ion-text-center ion-margin-top" *ngIf="videos.length < 1">
+        <div style="font-size: 80px; line-height: 10px;">
+            <ion-icon name="hand"></ion-icon>
+        </div>
+        <div style="font-size: 50px; font-weight: 600">Hold!</div>
+        <div style="font-size: 14px;">
+            Please persuade your lecturer to upload videos.
+        </div>
+    </div>
+</ion-content>

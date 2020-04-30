@@ -1,0 +1,41 @@
+<ion-card>
+    <ion-card-header>
+        <ion-card-title>Top 10 Leaderboard</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-label *ngIf="leaderboard?.length < 1">
+            No one is bold enough to take the challenge yet.<br />
+            Beat it, warrior!
+        </ion-label>
+        <ion-grid class="ion-no-padding" *ngIf="leaderboard?.length > 0">
+            <ion-row style="font-weight: bold;">
+                <ion-col>Place</ion-col>
+                <ion-col size="8">Name</ion-col>
+                <ion-col>Score</ion-col>
+            </ion-row>
+            <ion-row *ngFor="let result of leaderboard; let i = index">
+                <ion-col>{{ i + 1 }}</ion-col>
+                <ion-col size="8">
+                    {{ result.user.name }}
+                    <span *ngIf="user.username === result.user.username"
+                        >(You)</span
+                    >
+                </ion-col>
+                <ion-col>{{ result.score }}</ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+</ion-card>
+
+<ion-button
+    expand="block"
+    color="warning"
+    class="ion-padding"
+    [routerLink]="['/quizzes/challenge', videoId]"
+>
+    <ion-icon name="trophy" slot="start"></ion-icon>
+    Quiz Challenge
+</ion-button>
+<!-- <ion-button expand="block" [routerLink]="['/quizzes/manage', videoId]"
+        >Manage Quiz</ion-button
+    > -->

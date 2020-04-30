@@ -1,0 +1,40 @@
+<ion-list lines="none">
+    <ion-item class="comment-section" *ngFor="let comment of comments">
+        <ion-avatar class="ion-align-self-start">
+            <img
+                *ngIf="comment.user.base64_photo"
+                [src]="'data:image/png;base64,' + comment.user.base64_photo"
+            />
+        </ion-avatar>
+        <ion-label class="comment-content ion-text-wrap">
+            <div class="comment-header">
+                {{ comment.user.name }}
+                <div class="comment-date">
+                    {{ comment.created | date: 'medium' }}
+                </div>
+            </div>
+            <div class="comment-body">
+                {{ comment.comment }}
+            </div>
+        </ion-label>
+    </ion-item>
+
+    <div class="comment-post">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="11">
+                    <ion-item>
+                        <ion-input
+                            placeholder="Write a comment..."
+                            [(ngModel)]="commentInput"
+                        ></ion-input> </ion-item
+                ></ion-col>
+                <ion-col>
+                    <ion-button expand="full" (click)="addComment()">
+                        <ion-icon name="send" slot="start"></ion-icon>Post
+                    </ion-button></ion-col
+                >
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-list>

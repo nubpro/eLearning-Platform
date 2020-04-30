@@ -1,0 +1,27 @@
+ion-content {
+    --ion-background-color: #ffc7c7;
+
+    ion-grid {
+        margin-top: 10%;
+    }
+
+    .logo {
+        text-align: center;
+
+        .sub-heading {
+            font-size: 15px;
+            font-weight: 300;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+    }
+
+    .bg-image {
+        text-align: center;
+
+        img {
+            min-width: 130%;
+            margin-left: -15%;
+        }
+    }
+}

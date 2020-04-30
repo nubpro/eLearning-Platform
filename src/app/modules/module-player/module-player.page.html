@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar class="md">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/tabs/modules"></ion-back-button>
+        </ion-buttons>
+        <ion-title style="font-size: 12px;">
+            {{ module?.MODULE_DESCRIPTION }}
+        </ion-title>
+        <ion-title size="small">{{ video?.title }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="video">
+    <video width="100%" height="auto" controls autoplay>
+        <source src="{{ video?.url }}" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    <ion-segment
+        [(ngModel)]="selectedSegment"
+        scrollable
+        style="margin: 2px 0;"
+    >
+        <ion-segment-button value="about">
+            <ion-label>About Video</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="comments">
+            <ion-label>Comments</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="quiz">
+            <ion-label>Quiz</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="stats" *ngIf="user.role === 'lecturer'">
+            <ion-label>Statistics</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+    <app-video-about *ngIf="selectedSegment == 'about'"></app-video-about>
+
+    <app-video-comments
+        *ngIf="selectedSegment == 'comments'"
+    ></app-video-comments>
+
+    <app-video-quiz *ngIf="selectedSegment == 'quiz'"></app-video-quiz>
+
+    <app-video-stats *ngIf="selectedSegment == 'stats'"></app-video-stats>
+</ion-content>

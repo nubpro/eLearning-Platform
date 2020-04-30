@@ -1,0 +1,41 @@
+.comment-section {
+    padding: 14px 0;
+    border-bottom: 1px solid rgb(226, 226, 226);
+
+    .comment-content {
+        margin: 0;
+        padding-left: 10px;
+
+        .comment-header {
+            font-size: 14px;
+
+            .comment-date {
+                font-size: 11px;
+                display: inline-block;
+                font-style: italic;
+                color: rgb(145, 145, 145);
+            }
+        }
+
+        .comment-body {
+            font-size: 13px;
+            margin-top: 5px;
+        }
+    }
+}
+
+.comment-section:hover {
+    box-shadow: 0 0 15px #d8d8d8;
+}
+
+.comment-post {
+    margin: 10px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0px 3px 5px #ececec;
+}
+
+ion-avatar {
+    background-color: rgb(233, 233, 233);
+    box-shadow: 0px 2px 5px #d8d8d8;
+}

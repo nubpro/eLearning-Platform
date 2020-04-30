@@ -1,0 +1,24 @@
+<ion-card>
+    <ion-card-header>
+        <ion-card-title>Viewership</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-list style="margin-bottom: 20px;">
+            <ion-item>
+                <ion-label>Year</ion-label>
+                <ion-select
+                    interface="popover"
+                    (ionChange)="onYearChange($event.target.value)"
+                >
+                    <ion-select-option value="2017">2017</ion-select-option>
+                    <ion-select-option value="2018">2018</ion-select-option>
+                    <ion-select-option value="2019">
+                        2019
+                    </ion-select-option>
+                    <ion-select-option value="2020" selected>2020</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+        <canvas #trafficCanvas></canvas>
+    </ion-card-content>
+</ion-card>

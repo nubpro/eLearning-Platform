@@ -1,0 +1,107 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button (click)="close()"
+                ><ion-icon name="close" slot="icon-only"></ion-icon></ion-button
+        ></ion-buttons>
+        <ion-title>Add Video</ion-title>
+        <ion-buttons slot="primary">
+            <ion-button (click)="uploadVideo()" [disabled]="uploadForm.invalid">
+                <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="uploadForm">
+        <ion-list
+            lines="full"
+            class="ion-no-margin ion-no-padding"
+            *ngIf="percent === 0"
+        >
+            <ion-item>
+                <ion-label position="stacked">Intake</ion-label>
+                <ion-input
+                    type="text"
+                    readonly
+                    value="{{ intakeCode }}"
+                ></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Module</ion-label>
+                <ion-input
+                    type="text"
+                    readonly
+                    value="{{ moduleCode }}"
+                ></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="stacked">Title</ion-label>
+                <ion-input
+                    type="text"
+                    [(ngModel)]="title"
+                    formControlName="title"
+                ></ion-input>
+                <span
+                    class="form-error"
+                    *ngIf="
+                        (title_field.dirty || title_field.touched) &&
+                        title_field.hasError('required')
+                    "
+                >
+                    This field is required.
+                </span>
+                <span
+                    class="form-error"
+                    *ngIf="
+                        (title_field.dirty || title_field.touched) &&
+                        title_field.hasError('minlength')
+                    "
+                >
+                    This field requires at least 8 characters.
+                </span>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="stacked">Description</ion-label>
+                <ion-textarea
+                    [(ngModel)]="description"
+                    auto-grow="true"
+                    formControlName="description"
+                    rows="5"
+                ></ion-textarea>
+                <span
+                    class="form-error"
+                    *ngIf="
+                        (desc_field.dirty || desc_field.touched) &&
+                        desc_field.hasError('required')
+                    "
+                >
+                    This field is required.
+                </span>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Video Upload</ion-label>
+                <input
+                    type="file"
+                    class="btn-fileupload"
+                    (change)="handleFileInput($event.target.files)"
+                />
+            </ion-item>
+        </ion-list>
+
+        <div class="uploadingBox" *ngIf="percent > 0">
+            <div class="header">Uploading video... {{ this.percent }}%</div>
+            <ion-progress-bar type="indeterminate"></ion-progress-bar>
+        </div>
+
+        <!-- <div class="ion-padding">
+        <ion-button fill="outline">
+            Attach video
+            <ion-icon name="attach" slot="start"></ion-icon>
+        </ion-button>
+    </div> -->
+    </form>
+</ion-content>

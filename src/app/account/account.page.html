@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>My Account</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card class="ion-no-margin">
+        <ion-card-content>
+            <ion-grid *ngIf="user">
+                <ion-row>
+                    <ion-col>
+                        <img
+                            [src]="'data:image/png;base64,' + user.base64_photo"
+                            class="avatar"
+                        />
+                    </ion-col>
+                </ion-row>
+                <ion-row class="ion-text-center">
+                    <ion-col>
+                        {{ user.name }}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>Student ID</ion-col>
+                    <ion-col>{{ user.username }}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>Role</ion-col>
+                    <ion-col>{{ user.role }}</ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-button (click)="onLogout()" expand="full" class="ion-padding-vertical"
+        >Sign out</ion-button
+    >
+</ion-content>

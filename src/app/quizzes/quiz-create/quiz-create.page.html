@@ -1,0 +1,113 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Create Quiz</ion-title>
+
+        <ion-buttons slot="start">
+            <ion-button (click)="close()"
+                ><ion-icon name="close" slot="icon-only"></ion-icon></ion-button
+        ></ion-buttons>
+        <ion-buttons slot="primary">
+            <ion-button (click)="createQuiz()" [disabled]="!form.valid">
+                <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="form">
+        <ion-list class="ion-no-margin ion-no-padding" lines="full">
+            <ion-item>
+                <ion-label position="stacked">Question Description</ion-label>
+                <ion-textarea
+                    formControlName="question_desc"
+                    rows="3"
+                ></ion-textarea>
+                <span
+                    class="form-error"
+                    *ngIf="
+                        (question_desc.dirty || question_desc.touched) &&
+                        question_desc.hasError('required')
+                    "
+                >
+                    This field is required.
+                </span>
+                <span
+                    class="form-error"
+                    *ngIf="
+                        (question_desc.dirty || question_desc.touched) &&
+                        question_desc.hasError('minlength')
+                    "
+                >
+                    This field requires at least 5 characters.
+                </span>
+            </ion-item>
+
+            <ion-list-header>Answer 1</ion-list-header>
+            <ion-item formGroupName="answer_1">
+                <ion-input formControlName="description"></ion-input>
+                <ion-checkbox
+                    slot="end"
+                    color="success"
+                    mode="ios"
+                    formControlName="is_correct"
+                ></ion-checkbox>
+                <span
+                    class="form-error"
+                    *ngIf="
+                        (answer_1.dirty || answer_1.touched) &&
+                        answer_1.hasError('required')
+                    "
+                    >This field is required</span
+                >
+            </ion-item>
+
+            <ion-list-header>Answer 2</ion-list-header>
+            <ion-item formGroupName="answer_2">
+                <ion-input formControlName="description"></ion-input>
+                <ion-checkbox
+                    slot="end"
+                    color="success"
+                    mode="ios"
+                    formControlName="is_correct"
+                ></ion-checkbox>
+                <span
+                    class="form-error"
+                    *ngIf="
+                        (answer_2.dirty || answer_2.touched) &&
+                        answer_2.hasError('required')
+                    "
+                    >This field is required</span
+                >
+            </ion-item>
+
+            <ion-list-header>
+                Answer 3
+                <span class="opt">(optional)</span></ion-list-header
+            >
+            <ion-item formGroupName="answer_3">
+                <ion-input formControlName="description"></ion-input>
+                <ion-checkbox
+                    slot="end"
+                    color="success"
+                    mode="ios"
+                    formControlName="is_correct"
+                ></ion-checkbox>
+            </ion-item>
+
+            <ion-list-header>
+                Answer 4
+                <span class="opt">(optional)</span></ion-list-header
+            >
+            <ion-item formGroupName="answer_4">
+                <ion-input formControlName="description"></ion-input>
+                <ion-checkbox
+                    slot="end"
+                    color="success"
+                    mode="ios"
+                    formControlName="is_correct"
+                ></ion-checkbox>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>

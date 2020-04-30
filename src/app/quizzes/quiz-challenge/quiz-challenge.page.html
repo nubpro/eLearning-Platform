@@ -1,0 +1,117 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/tabs/modules"></ion-back-button>
+        </ion-buttons>
+
+        <ion-title>Quiz Challenge</ion-title>
+
+        <ion-buttons slot="primary" *ngIf="user.role === 'lecturer'">
+            <ion-button [routerLink]="['/quizzes/manage', videoId]">
+                <ion-icon slot="icon-only" name="settings"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-text-center ion-margin-top" *ngIf="quizzes.length < 1">
+        <div style="font-size: 80px; line-height: 10px;">
+            <ion-icon name="hand"></ion-icon>
+        </div>
+        <div style="font-size: 50px; font-weight: 600">Oh No!</div>
+        <div style="font-size: 14px;">
+            Please persuade your lecturer to create quizzes.
+        </div>
+    </div>
+
+    <form
+        [formGroup]="answerForm"
+        #form="ngForm"
+        (submit)="onSubmit()"
+        *ngIf="quizzes.length > 0"
+    >
+        <ion-card
+            formArrayName="answerArray"
+            *ngFor="let quiz of quizzes; let i = index"
+            [id]="'quiz-' + quiz._id"
+        >
+            <ion-card-header>
+                <ion-card-title>
+                    {{ i + 1 }}. {{ quiz.question_desc }}
+                </ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                <ion-text
+                    color="danger"
+                    *ngIf="form.submitted && answerArray.controls[i].invalid"
+                    >Please answer this question.</ion-text
+                >
+                <ion-list>
+                    <ion-radio-group [formControlName]="i">
+                        <ion-item
+                            class="ion-no-padding"
+                            *ngIf="quiz.answer_1?.description"
+                        >
+                            <ion-radio
+                                slot="start"
+                                value="answer_1"
+                                mode="md"
+                            ></ion-radio>
+                            <ion-label class="ion-text-wrap">
+                                {{ quiz.answer_1.description }}
+                            </ion-label>
+                        </ion-item>
+
+                        <ion-item
+                            class="ion-no-padding"
+                            *ngIf="quiz.answer_2?.description"
+                        >
+                            <ion-radio
+                                slot="start"
+                                value="answer_2"
+                                mode="md"
+                            ></ion-radio>
+                            <ion-label class="ion-text-wrap">
+                                {{ quiz.answer_2.description }}
+                            </ion-label>
+                        </ion-item>
+
+                        <ion-item
+                            class="ion-no-padding"
+                            *ngIf="quiz.answer_3?.description"
+                        >
+                            <ion-radio
+                                slot="start"
+                                value="answer_3"
+                                mode="md"
+                            ></ion-radio>
+                            <ion-label class="ion-text-wrap">
+                                {{ quiz.answer_3.description }}
+                            </ion-label>
+                        </ion-item>
+
+                        <ion-item
+                            class="ion-no-padding"
+                            *ngIf="quiz.answer_4?.description"
+                        >
+                            <ion-radio
+                                slot="start"
+                                value="answer_4"
+                                mode="md"
+                            ></ion-radio>
+                            <ion-label class="ion-text-wrap">
+                                {{ quiz.answer_4.description }}
+                            </ion-label>
+                        </ion-item>
+                    </ion-radio-group>
+                </ion-list>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-button expand="full" class="ion-margin" type="submit">
+            Submit
+        </ion-button>
+    </form>
+</ion-content>

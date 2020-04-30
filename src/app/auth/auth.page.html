@@ -1,0 +1,49 @@
+<ion-header no-border> </ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div class="logo">
+                    <img src="../../assets/images/logo.png" width="170" />
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size-md="6" offset-md="3" size-lg="4" offset-lg="4">
+                <div class="bg-image">
+                    <img src="../../assets/images/girl_reading.svg" style="" />
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <form [formGroup]="credentialsForm" (ngSubmit)="onLogin()">
+                    <ion-item>
+                        <ion-label position="floating">Username</ion-label>
+                        <ion-input
+                            type="text"
+                            formControlName="username"
+                        ></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label position="floating">Password</ion-label>
+                        <ion-input
+                            type="password"
+                            formControlName="password"
+                        ></ion-input>
+                    </ion-item>
+
+                    <ion-button
+                        type="submit"
+                        expand="full"
+                        [disabled]="!credentialsForm.valid"
+                        margin
+                        >Sign In</ion-button
+                    >
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

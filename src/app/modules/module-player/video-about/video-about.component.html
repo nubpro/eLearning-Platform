@@ -1,0 +1,35 @@
+<ion-card>
+    <ion-card-content class="ion-no-padding">
+        <ion-grid>
+            <ion-row
+                style="border-bottom: rgb(241, 241, 241) 1px solid; padding: 5px 0"
+            >
+                <ion-col>
+                    <div class="title">{{ video?.title }}</div>
+                    <div class="date">
+                        {{ video?.views }} views •
+                        {{ video?.uploaded | date: 'medium' }}
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col> {{ video?.description }}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-chip>
+                        <ion-avatar>
+                            <img
+                                [src]="
+                                    'data:image/png;base64,' +
+                                    author?.base64_photo
+                                "
+                            />
+                        </ion-avatar>
+                        <ion-label>{{ video?.user.name }}</ion-label>
+                    </ion-chip>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+</ion-card>
