@@ -13,13 +13,12 @@ A cross-platform application built on top of Ionic framework that works across w
 ## Demo
 https://youtu.be/0k9Xc9GAy88
 
-## Preview
-![Login](https://i.imgur.com/E7U1TrX.png)
-![My Modules](https://i.imgur.com/ojPdRYK.png)
-![Video Catalog](https://i.imgur.com/krRYTfs.png)
-![About Video](https://i.imgur.com/4PhlPEt.png)
-![Comments](https://i.imgur.com/6CFwZLu.png)
-![Quiz](https://i.imgur.com/vLT0lwB.png)
-![Statistics](https://i.imgur.com/ZkTh3VL.png)
-![Quiz Challenge](https://i.imgur.com/FobcwzS.png)
-![Create New Quiz](https://i.imgur.com/tqmCyD8.png)
+## PreviewT
+<img src="https://i.imgur.com/JDXrP0V.png" height="500"> <img src="https://i.imgur.com/erx2Clk.png" height="500">
+<img src="https://i.imgur.com/O65YTLm.png" height="500">
+<img src="https://i.imgur.com/fiukzhK.png" height="500">
+<img src="https://i.imgur.com/GAngJJd.png" height="500">
+<img src="https://i.imgur.com/XxGSkY6.png" height="500">
+<img src="https://i.imgur.com/lKO6ePC.png" height="500">
+<img src="https://i.imgur.com/bAd5MZU.png" height="500">
+<img src="https://i.imgur.com/Yw13gJe.png" height="500">
