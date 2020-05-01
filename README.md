@@ -14,11 +14,11 @@ A cross-platform application built on top of Ionic framework that works across w
 https://youtu.be/0k9Xc9GAy88
 
 ## Preview
-<img src="https://i.imgur.com/JDXrP0V.png" height="640"> <img src="https://i.imgur.com/erx2Clk.png" height="640">
-<img src="https://i.imgur.com/O65YTLm.png" height="640">
-<img src="https://i.imgur.com/fiukzhK.png" height="640">
-<img src="https://i.imgur.com/GAngJJd.png" height="640">
-<img src="https://i.imgur.com/XxGSkY6.png" height="640">
-<img src="https://i.imgur.com/lKO6ePC.png" height="640">
-<img src="https://i.imgur.com/bAd5MZU.png" height="640">
-<img src="https://i.imgur.com/Yw13gJe.png" height="640">
+<img src="https://i.imgur.com/JDXrP0V.png" height="500"> <img src="https://i.imgur.com/erx2Clk.png" height="500">
+<img src="https://i.imgur.com/O65YTLm.png" height="500">
+<img src="https://i.imgur.com/fiukzhK.png" height="500">
+<img src="https://i.imgur.com/GAngJJd.png" height="500">
+<img src="https://i.imgur.com/XxGSkY6.png" height="500">
+<img src="https://i.imgur.com/lKO6ePC.png" height="500">
+<img src="https://i.imgur.com/bAd5MZU.png" height="500">
+<img src="https://i.imgur.com/Yw13gJe.png" height="500">
