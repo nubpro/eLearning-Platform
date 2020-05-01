@@ -10,6 +10,9 @@ A cross-platform application built on top of Ionic framework that works across w
 * Students can participate in the quiz challenge of a video arranged by the lecturer.
 * Students and lecturers can view the top 10 participants who scored the highest in the quiz challenge.
 
+## Demo
+https://youtu.be/0k9Xc9GAy88
+
 ## Preview
 ![Login](https://i.imgur.com/E7U1TrX.png)
 ![My Modules](https://i.imgur.com/ojPdRYK.png)
@@ -20,6 +23,3 @@ A cross-platform application built on top of Ionic framework that works across w
 ![Statistics](https://i.imgur.com/ZkTh3VL.png)
 ![Quiz Challenge](https://i.imgur.com/FobcwzS.png)
 ![Create New Quiz](https://i.imgur.com/tqmCyD8.png)
-
-## Demo
-https://youtu.be/0k9Xc9GAy88
